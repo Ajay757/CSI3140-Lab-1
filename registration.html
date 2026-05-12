@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - uOttawa Game Dev Showcase 2026</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>uOttawa Game Dev Showcase 2026</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="registration.html">Registration</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Register for the Event</h2>
+      <p>
+        Complete the form below to register for the uOttawa Game Dev Showcase 2026.
+      </p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Participant Information</legend>
+
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="fullName" required minlength="2" maxlength="60">
+
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="student-number">Student number</label>
+          <input type="text" id="student-number" name="studentNumber" required pattern="[0-9]{9}" placeholder="Example: 300123456">
+
+          <label for="program">Program of study</label>
+          <select id="program" name="program" required>
+            <option value="">Select a program</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="software-engineering">Software Engineering</option>
+            <option value="computer-engineering">Computer Engineering</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Event Preferences</legend>
+
+          <p>Experience level</p>
+
+          <input type="radio" id="beginner" name="experience" value="beginner" required>
+          <label for="beginner">Beginner</label>
+
+          <input type="radio" id="intermediate" name="experience" value="intermediate">
+          <label for="intermediate">Intermediate</label>
+
+          <input type="radio" id="advanced" name="experience" value="advanced">
+          <label for="advanced">Advanced</label>
+
+          <p>Sessions you are interested in</p>
+
+          <input type="checkbox" id="unity" name="sessions" value="unity">
+          <label for="unity">Unity Basics Workshop</label>
+
+          <input type="checkbox" id="platformer" name="sessions" value="platformer">
+          <label for="platformer">2D Platformer Design</label>
+
+          <input type="checkbox" id="playtesting" name="sessions" value="playtesting">
+          <label for="playtesting">Playtesting Session</label>
+        
+         
+          <p>Additonal Comments</p>
+          <textarea id="comments" name="comments" rows="5" maxlength="300"></textarea>
+        </fieldset>
+
+        <button type="submit">Submit registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CSI 3140 Lab 1</p>
+    <p><a href="mailto:gamedevshowcase@example.com">Contact the event team</a></p>
+  </footer>
+</body>
+</html>
