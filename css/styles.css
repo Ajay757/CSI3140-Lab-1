@@ -1,32 +1,33 @@
-/* ========== General Page Styles ========== */
+/* ========== Global Styles ========== */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f6fb;
     color: #222;
     line-height: 1.6;
 }
 
+.container {
+    width: min(100% - 2rem, 1100px);
+    margin: 0 auto;
+}
+
 main {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
+    padding: 2rem 0;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
-
-/* ========== Header and Navigation ========== */
-
-header {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
+h1,
+h2 {
+    margin-top: 0;
 }
 
 h1 {
@@ -34,25 +35,207 @@ h1 {
 }
 
 h2 {
-    color: #333;
+    color: #1f2937;
 }
 
-nav {
-    margin-top: 10px;
+/* ========== Cards and Grid Layout ========== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
 }
 
-nav a {
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #111827;
+}
+
+.card,
+.schedule-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.schedule-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* ========== Schedule Grid ========== */
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.schedule-card {
+    background-color: white;
+    padding: 1.25rem;
+    border-left: 5px solid #8f001a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-card h3 {
+    margin-top: 0;
+    color: #8f001a;
+}
+
+/* ========== Feature Layout ========== */
+
+.feature-layout {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    padding: 1.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-layout img {
+    width: 45%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.feature-layout div {
+    flex: 1;
+}
+
+/* ========== Registration Form ========== */
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+legend {
+    font-weight: bold;
+    color: #8f001a;
+    padding: 0 0.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #8f001a;
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+button:hover {
+    background-color: #6f0015;
 }
 
+/* ========== Responsive Design ========== */
 
+@media (max-width: 768px) {
+
+    .feature-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-layout img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main-nav {
+        flex-direction: column;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
+
+/* ========== Accessibility Focus Styles ========== */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #8f001a;
+    outline-offset: 2px;
+}
+
+/* ========== Header and Navigation ========== */
+
+.site-header {
+    background-color: #111827;
+    color: white;
+    padding: 1.5rem 0;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: #374151;
+    outline: none;
+}
 /* ========== Lists and Images ========== */
 
 ul,
@@ -93,6 +276,36 @@ thead {
     background-color: #eeeeee;
 }
 
+/* ========== Hero Section ========== */
+
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.hero h2 {
+    color: rgb(78, 215, 231);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
 
 /* ========== Form Styles ========== */
 
@@ -122,6 +335,36 @@ textarea {
     margin-top: 5px;
     margin-bottom: 15px;
     box-sizing: border-box;
+}
+
+.form-section-title {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.option-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: normal;
+}
+
+.option-row input {
+    width: auto;
+    margin: 0;
+}
+
+.textarea-label {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 /* Radio and checkbox alignment */

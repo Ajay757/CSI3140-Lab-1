@@ -8,18 +8,20 @@
 </head>
 
 <body>
-  <header>
-    <h1>uOttawa Game Dev Showcase 2026</h1>
+  <header class="site-header">
+    <div class="container header-content">
+      <h1>uOttawa Game Dev Showcase 2026</h1>
 
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="registration.html">Registration</a>
-    </nav>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="registration.html">Registration</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <section>
       <h2>About the Event</h2>
 
@@ -48,21 +50,28 @@
     <section>
       <h2>Featured Workshop</h2>
 
-      <img
-        src="images/gamedev.jpg"
-        alt="Students participating in a game development workshop"
-        width="700"
-      >
+      <div class="feature-layout">
+        <img
+          src="images/gamedev.jpg"
+          alt="Students participating in a game development workshop"
+        >
 
-      <p>
-        The featured workshop introduces participants to creating interactive 2D games using beginner-friendly
-        development tools and design practices.
-      </p>
+        <div>
+          <h3>Hands-On 2D Game Development</h3>
+          <p>
+            The featured workshop introduces participants to creating interactive 2D games using beginner-friendly
+            development tools and design practices.
+          </p>
+          <p>
+            Students will explore basic gameplay mechanics, level design, playtesting, and teamwork.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 CSI 3140 Lab 1</p>
+    <p>&copy; 2026 uOttawa Game Dev Showcase</p>
     <p><a href="mailto:gamedevshowcase@example.com">Contact the event team</a></p>
   </footer>
 </body>
