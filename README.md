@@ -1,1 +1,1 @@
-# CSI3140-Lab-1
+# CSI3140-Labs
