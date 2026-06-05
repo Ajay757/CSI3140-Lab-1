@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #0d214f;
+    --primary-hover: #173a8c;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -35,7 +40,7 @@ h1 {
 }
 
 h2 {
-    color: #1f2937;
+    color: var(--primary-color);
 }
 
 /* ========== Cards and Grid Layout ========== */
@@ -82,14 +87,14 @@ h2 {
 .schedule-card {
     background-color: white;
     padding: 1.25rem;
-    border-left: 5px solid #8f001a;
+    border-left: 5px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .schedule-card h3 {
     margin-top: 0;
-    color: #8f001a;
+    color: var(--primary-color);
 }
 
 /* ========== Feature Layout ========== */
@@ -135,7 +140,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #8f001a;
+    color: var(--primary-color);
     padding: 0 0.5rem;
 }
 
@@ -150,7 +155,7 @@ textarea {
 }
 
 button {
-    background-color: #8f001a;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;
@@ -160,7 +165,7 @@ button {
 }
 
 button:hover {
-    background-color: #6f0015;
+    background-color: var(--primary-hover);
 }
 
 /* ========== Responsive Design ========== */
@@ -198,14 +203,14 @@ button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 3px solid #8f001a;
+    outline: 3px solid var(--primary-color);
     outline-offset: 2px;
 }
 
 /* ========== Header and Navigation ========== */
 
 .site-header {
-    background-color: #111827;
+    background-color: var(--primary-color);
     color: white;
     padding: 1.5rem 0;
 }
@@ -233,7 +238,7 @@ textarea:focus {
 
 .main-nav a:hover,
 .main-nav a:focus {
-    background-color: #374151;
+    background-color: var(--primary-hover);
     outline: none;
 }
 /* ========== Lists and Images ========== */
@@ -283,8 +288,8 @@ thead {
     padding: 5rem 2rem;
     background: linear-gradient(
         135deg,
-        #0f172a,
-        #1e293b
+        var(--primary-color),
+        var(--primary-hover)
     );
     color: rgb(255, 255, 255);
     border-radius: 20px;
