@@ -133,21 +133,93 @@ document.addEventListener("DOMContentLoaded", function () {
             formErrorBox.textContent = "";
             formSuccess.textContent = "";
 
-            if (fullName.value.trim().length < 2) {
+            if (fullName.value.trim() === "") {
                 document.querySelector("#name-error").textContent =
-                    "Please enter your full name.";
+                    "Full name is required.";
+                fullName.classList.add("input-error");
+                isValid = false;
+            } else if (!/^[A-Za-z\s'-]+$/.test(fullName.value.trim())) {
+                document.querySelector("#name-error").textContent =
+                    "Full name may only contain letters, spaces, apostrophes, and hyphens.";
+                fullName.classList.add("input-error");
+                isValid = false;
+            } else if (fullName.value.trim().length < 2) {
+                document.querySelector("#name-error").textContent =
+                    "Full name must be at least 2 characters long.";
                 fullName.classList.add("input-error");
                 isValid = false;
             }
 
-            if (!email.value.includes("@") || !email.value.includes(".")) {
+            const emailValue = email.value.trim();
+
+            if (emailValue === "") {
                 document.querySelector("#email-error").textContent =
-                    "Please enter a valid email address.";
+                    "Email address is required.";
                 email.classList.add("input-error");
                 isValid = false;
+
+            } else if (emailValue.includes("#")) {
+                document.querySelector("#email-error").textContent =
+                    "Email address cannot contain the # character.";
+                email.classList.add("input-error");
+                isValid = false;
+
+            } else if (!emailValue.includes("@")) {
+                document.querySelector("#email-error").textContent =
+                    "Email address must contain an @ symbol.";
+                email.classList.add("input-error");
+                isValid = false;
+
+            } else {
+                const parts = emailValue.split("@");
+
+                if (parts.length !== 2) {
+                    document.querySelector("#email-error").textContent =
+                        "Email address can only contain one @ symbol.";
+                    email.classList.add("input-error");
+                    isValid = false;
+
+                } else if (parts[0].length < 2) {
+                    document.querySelector("#email-error").textContent =
+                        "The username before @ must contain at least 2 characters.";
+                    email.classList.add("input-error");
+                    isValid = false;
+
+                } else if (!parts[1].includes(".")) {
+                    document.querySelector("#email-error").textContent =
+                        "The domain must contain a dot (example: gmail.com).";
+                    email.classList.add("input-error");
+                    isValid = false;
+
+                } else {
+                    const domainParts = parts[1].split(".");
+
+                    if (domainParts[0].length < 2) {
+                        document.querySelector("#email-error").textContent =
+                            "The domain name is too short.";
+                        email.classList.add("input-error");
+                        isValid = false;
+
+                    } else if (domainParts[1].length < 2) {
+                        document.querySelector("#email-error").textContent =
+                            "The domain extension must contain at least 2 characters (example: .com or .ca).";
+                        email.classList.add("input-error");
+                        isValid = false;
+                    }
+                }
             }
 
-            if (!/^[0-9]{9}$/.test(studentNumber.value.trim())) {
+            if (studentNumber.value.trim() === "") {
+                document.querySelector("#student-error").textContent =
+                    "Student number is required.";
+                studentNumber.classList.add("input-error");
+                isValid = false;
+            } else if (!/^[0-9]+$/.test(studentNumber.value.trim())) {
+                document.querySelector("#student-error").textContent =
+                    "Student number must contain numbers only.";
+                studentNumber.classList.add("input-error");
+                isValid = false;
+            } else if (!/^[0-9]{9}$/.test(studentNumber.value.trim())) {
                 document.querySelector("#student-error").textContent =
                     "Student number must be exactly 9 digits.";
                 studentNumber.classList.add("input-error");
@@ -156,26 +228,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (program.value === "") {
                 document.querySelector("#program-error").textContent =
-                    "Please select your program.";
+                    "Program of study is required. Please select one option.";
                 program.classList.add("input-error");
                 isValid = false;
             }
 
             if (!experience) {
                 document.querySelector("#experience-error").textContent =
-                    "Please select your experience level.";
+                    "Experience level is required. Please select Beginner, Intermediate, or Advanced.";
                 isValid = false;
             }
 
             if (sessions.length === 0) {
                 document.querySelector("#sessions-error").textContent =
-                    "Please select at least one session.";
+                    "At least one session must be selected.";
                 isValid = false;
             }
 
             if (!isValid) {
                 formErrorBox.textContent =
-                    "Please fix the highlighted fields before submitting the form.";
+                    "Registration could not be submitted. Please fix the highlighted fields below.";
                 formErrorBox.scrollIntoView({ behavior: "smooth", block: "center" });
                 return;
             }
