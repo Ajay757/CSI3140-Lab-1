@@ -262,4 +262,23 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    const toggleRecommendation = document.querySelector("#toggle-recommendation");
+    const recommendationContent = document.querySelector("#recommendation-content");
+
+    if (toggleRecommendation && recommendationContent) {
+
+    toggleRecommendation.addEventListener("click", function () {
+
+        recommendationContent.classList.toggle("hidden");
+
+        if (recommendationContent.classList.contains("hidden")) {
+            toggleRecommendation.textContent = "▼";
+        } else {
+            toggleRecommendation.textContent = "▲";
+        }
+
+    });
+
+}
 });

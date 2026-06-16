@@ -77,36 +77,44 @@
         </div>
       </div>
     </section>
+
     <section class="recommendation-section">
-      <h2>Which Workshop Is Right for You?</h2>
+      <div class="recommendation-header">
+          <button type="button" id="toggle-recommendation" class="accordion-toggle">
+              ▼
+          </button>
+
+          <h2>Which Workshop Is Right for You?</h2>
+      </div>
 
       <p>
         Choose the area that interests you most, and the page will recommend a session.
       </p>
 
-      <div class="recommendation-buttons">
-        <button type="button" class="recommendation-button" data-interest="programming">
-          I like programming
-        </button>
+      <div id="recommendation-content" class="hidden">
+        <div class="recommendation-buttons">
+          <button type="button" class="recommendation-button" data-interest="programming">
+            I like programming
+          </button>
 
-        <button type="button" class="recommendation-button" data-interest="art">
-          I like art
-        </button>
+          <button type="button" class="recommendation-button" data-interest="art">
+            I like art
+          </button>
 
-        <button type="button" class="recommendation-button" data-interest="design">
-          I like game design
-        </button>
-      </div>
+          <button type="button" class="recommendation-button" data-interest="design">
+            I like game design
+          </button>
+        </div>
 
-      <div class="recommendation-result">
-        <h3 id="recommendation-title">Recommended Workshop</h3>
-        <p id="recommendation-text">
-          Select an interest above to get a workshop recommendation.
-        </p>
+        <div class="recommendation-result">
+          <h3 id="recommendation-title">Recommended Workshop</h3>
+          <p id="recommendation-text">
+            Select an interest above to get a workshop recommendation.
+          </p>
+        </div>
       </div>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2026 uOttawa Game Dev Showcase</p>
     <p><a href="mailto:gamedevshowcase@example.com">Contact the event team</a></p>

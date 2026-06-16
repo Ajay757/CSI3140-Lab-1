@@ -447,6 +447,37 @@ footer a {
     transform: translateX(24px);
 }
 
+.hidden {
+    display: none;
+}
+
+#toggle-recommendation {
+    margin-top: 1rem;
+}
+
+.recommendation-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommendation-header h2 {
+    margin: 0;
+}
+
 /* ========== Dark Mode: Black / Red Theme ========== */
 
 .dark-mode legend {
