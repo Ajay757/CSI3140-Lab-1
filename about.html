@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - uOttawa Game Dev Showcase 2026</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -18,6 +19,14 @@
         <a href="schedule.html">Schedule</a>
         <a href="registration.html">Registration</a>
       </nav>
+
+      <label class="theme-switch">
+          <span>Light</span>
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+          <span>Dark</span>
+      </label>
+
     </div>
   </header>
 
@@ -66,6 +75,34 @@
             Students will explore basic gameplay mechanics, level design, playtesting, and teamwork.
           </p>
         </div>
+      </div>
+    </section>
+    <section class="recommendation-section">
+      <h2>Which Workshop Is Right for You?</h2>
+
+      <p>
+        Choose the area that interests you most, and the page will recommend a session.
+      </p>
+
+      <div class="recommendation-buttons">
+        <button type="button" class="recommendation-button" data-interest="programming">
+          I like programming
+        </button>
+
+        <button type="button" class="recommendation-button" data-interest="art">
+          I like art
+        </button>
+
+        <button type="button" class="recommendation-button" data-interest="design">
+          I like game design
+        </button>
+      </div>
+
+      <div class="recommendation-result">
+        <h3 id="recommendation-title">Recommended Workshop</h3>
+        <p id="recommendation-text">
+          Select an interest above to get a workshop recommendation.
+        </p>
       </div>
     </section>
   </main>
