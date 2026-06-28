@@ -281,4 +281,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 }
+const scheduleFilters = document.querySelectorAll(".schedule-filter");
+const scheduleCards = document.querySelectorAll(".schedule-card");
+
+scheduleFilters.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const selectedCategory = button.dataset.category;
+
+        scheduleCards.forEach(function (card) {
+            const cardCategory = card.dataset.category;
+
+            if (selectedCategory === "all" || cardCategory === selectedCategory) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    });
+});
+
 });

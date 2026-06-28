@@ -657,3 +657,14 @@ footer a {
 .form-error-box:empty {
     display: none;
 }
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.hidden {
+    display: none;
+}

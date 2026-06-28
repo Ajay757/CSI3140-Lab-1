@@ -37,26 +37,33 @@
         The showcase includes beginner workshops, design sessions, playtesting time, and a final student project showcase.
       </p>
 
+      <div class="filter-buttons">
+        <button type="button" class="schedule-filter" data-category="all">All</button>
+        <button type="button" class="schedule-filter" data-category="workshop">Workshops</button>
+        <button type="button" class="schedule-filter" data-category="design">Design</button>
+        <button type="button" class="schedule-filter" data-category="showcase">Showcase</button>
+      </div>
+
       <div class="schedule-grid">
-        <article class="schedule-card">
+        <article class="schedule-card" data-category="all">
           <h3>9:00 AM</h3>
           <p><strong>Opening and Welcome</strong></p>
           <p>STEM 117</p>
         </article>
 
-        <article class="schedule-card">
+        <article class="schedule-card" data-category="design">
           <h3>1:30 PM</h3>
           <p><strong>2D Platformer Design</strong></p>
           <p>Computer Lab A</p>
         </article>
 
-        <article class="schedule-card">
+        <article class="schedule-card" data-category="workshop">
           <h3>3:30 PM</h3>
           <p><strong>Playtesting Session</strong></p>
           <p>STEM 117</p>
         </article>
 
-        <article class="schedule-card">
+        <article class="schedule-card" data-category="showcase">
           <h3>5:00 PM</h3>
           <p><strong>Student Project Showcase</strong></p>
           <p>Main Hall</p>
